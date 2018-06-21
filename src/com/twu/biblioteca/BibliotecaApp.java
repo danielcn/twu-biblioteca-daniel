@@ -12,7 +12,6 @@ public class BibliotecaApp {
     public void mainMenu(){
         System.out.println("Command Options: ");
         System.out.println("1: List Books");
-        System.out.println("0: Quit");
 
         Scanner sc = new Scanner(System.in);
         int choice = 0;
@@ -23,9 +22,10 @@ public class BibliotecaApp {
                     this.getBookList();
                     break;
                 default:
+                    System.out.println("Select a valid option!");
                     break;
             }
-        } while (choice != 0);
+        } while (choice != -1);
     }
 
     public ArrayList<Book> getBookList() {
