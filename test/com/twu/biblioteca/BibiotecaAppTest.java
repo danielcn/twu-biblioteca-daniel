@@ -4,11 +4,10 @@ package com.twu.biblioteca;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class ExampleTest {
+public class BibiotecaAppTest {
 
     private BibliotecaApp bibliotecaApp;
-
-
+    
     @Test
     public void test() {
 
