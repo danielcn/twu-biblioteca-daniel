@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ca55598-e697-4b6e-b793-8d37945046cc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BibiotecaAppTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibiotecaAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibiotecaAppTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -54,8 +48,8 @@
       <file leaf-file-name="BibiotecaAppTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibiotecaAppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+            <state relative-caret-position="15">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -309,12 +303,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BibiotecaAppTest_removeBookList - 2018.06.21 at 18h 29m 49s.xml">
-      <configuration name="BibiotecaAppTest.removeBookList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BibiotecaAppTest_removeBookList - 2018.06.21 at 18h 32m 44s.xml">
-      <configuration name="BibiotecaAppTest.removeBookList" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BibiotecaAppTest_removeBookList - 2018.06.21 at 19h 00m 05s.xml">
       <configuration name="BibiotecaAppTest.removeBookList" configurationId="JUnit" />
     </history-entry>
@@ -337,6 +325,12 @@
       <configuration name="BibiotecaAppTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="BibiotecaAppTest - 2018.06.21 at 19h 32m 12s.xml">
+      <configuration name="BibiotecaAppTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibiotecaAppTest - 2018.06.21 at 19h 32m 56s.xml">
+      <configuration name="BibiotecaAppTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibiotecaAppTest - 2018.06.21 at 19h 33m 19s.xml">
       <configuration name="BibiotecaAppTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -515,8 +509,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibiotecaAppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
