@@ -12,6 +12,7 @@ public class BibliotecaApp {
     public void mainMenu(){
         System.out.println("Command Options: ");
         System.out.println("1: List Books");
+        System.out.println("0: Quit");
 
         Scanner sc = new Scanner(System.in);
         int choice = 0;
@@ -21,11 +22,13 @@ public class BibliotecaApp {
                 case 1:
                     this.getBookList();
                     break;
+                case 0:
+                    break;
                 default:
                     System.out.println("Select a valid option!");
                     break;
             }
-        } while (choice != -1);
+        } while (choice != 0);
     }
 
     public ArrayList<Book> getBookList() {
