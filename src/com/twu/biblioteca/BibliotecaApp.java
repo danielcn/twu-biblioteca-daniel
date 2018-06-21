@@ -1,18 +1,29 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.BlockingDeque;
 
 public class BibliotecaApp {
 
-    public String welcomeMessage(){
-        return "Welcome Message";
+    private ArrayList<Book> bookList;
+
+    BibliotecaApp(){
+        this.bookList = new ArrayList<Book>();
+    }
+
+    public void logMessage(String message){
+        System.out.println(message);
+    }
+
+    public String welcomeMessage() {
+        String welcomeMessage = "Welcome Message";
+        return welcomeMessage;
     }
 
     public void mainMenu(){
-        System.out.println("Command Options: ");
-        System.out.println("1: List Books");
-        System.out.println("0: Quit");
+        logMessage("Command Options: ");
+        logMessage("1: List Books");
+        logMessage("0: Quit");
 
         Scanner sc = new Scanner(System.in);
         int choice = 0;
@@ -25,20 +36,18 @@ public class BibliotecaApp {
                 case 0:
                     break;
                 default:
-                    System.out.println("Select a valid option!");
+                    logMessage("Select a valid option!");
                     break;
             }
         } while (choice != 0);
     }
 
-    public ArrayList<Book> getBookList() {
-
-        ArrayList<Book> bookList = new ArrayList<Book>();
+    public List<Book> getBookList() {
 
         Book book1 = new Book();
         book1.setBookName("Harry Potter");
         Book book2 = new Book();
-        book1.setBookName("More and better");
+        book2.setBookName("More and better");
         Book book3 = new Book();
         book3.setBookName("The Alice's Life");
 
@@ -49,8 +58,23 @@ public class BibliotecaApp {
         return bookList;
     }
 
+    public boolean removeCheckOutBook(Book book){
+
+        List<Book> bookList = getBookList();
+
+        while (bookList.iterator().hasNext()) {
+            Book currentBook = bookList.iterator().next();
+            System.out.println(currentBook);
+            if(currentBook.equals(book)){
+                return bookList.remove(currentBook);
+            }
+        }
+        return false;
+    }
+
     public void startApp(){
-        System.out.println(welcomeMessage());
+        String welcomeMessage = welcomeMessage();
+        logMessage(welcomeMessage);
         mainMenu();
     }
 

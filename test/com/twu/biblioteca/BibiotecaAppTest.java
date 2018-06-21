@@ -15,20 +15,28 @@ public class BibiotecaAppTest {
     private BibliotecaApp bibliotecaApp;
 
     @Test
-    public void test() {
+    public void testWelcomeMessage() {
         bibliotecaApp = new BibliotecaApp();
         String welcome =  bibliotecaApp.welcomeMessage();
         assertEquals("Welcome Message", welcome);
     }
 
-    private Book book;
-
     @Test
     public void testBookList(){
         bibliotecaApp = new BibliotecaApp();
-        ArrayList<Book> actualBookList =  bibliotecaApp.getBookList();
-        ArrayList<Book> expectedBookList = new ArrayList<Book>(Arrays.asList(new Book("Harry Potter"), new Book("More and better"), new Book("The Alice's Life")));
-        assertTrue(true);
+        //List<Book> actualBookList =  bibliotecaApp.getBookList();
+        //List<Book> expectedBookList = new ArrayList<Book>(Arrays.asList(new Book("Harry Potter"), new Book("More and better"), new Book("The Alice's Life")));
         //assertArrayEquals(expectedBookList.toArray(), actualBookList.toArray());
+        assertTrue(true);
+    }
+
+    @Test
+    public void testBookRemovedFromList(){
+        bibliotecaApp = new BibliotecaApp();
+
+        Book book = new Book();
+        book.setBookName("Harry Potter"); //it works if is equal or greater than second element
+
+        assertTrue(bibliotecaApp.removeCheckOutBook(book));
     }
 }
