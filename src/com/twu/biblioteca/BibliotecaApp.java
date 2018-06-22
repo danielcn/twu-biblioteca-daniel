@@ -38,13 +38,14 @@ public class BibliotecaApp {
     }
 
     public void mainMenu(){
-        logMessage("Command Options: ");
-        logMessage("1: List Books");
-        logMessage("0: Quit");
 
         Scanner sc = new Scanner(System.in);
         int choice = 0;
         do {
+            logMessage("Command Options: ");
+            logMessage("1: List Books");
+            logMessage("0: Quit");
+
             choice = sc.nextInt();
             switch (choice) {
                 case 1:
