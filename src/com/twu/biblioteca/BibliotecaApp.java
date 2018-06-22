@@ -48,7 +48,7 @@ public class BibliotecaApp {
             choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    this.getBookList();
+                    this.bookDetails(this.getBookList());
                     break;
                 case 0:
                     break;
