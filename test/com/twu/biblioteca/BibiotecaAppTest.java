@@ -17,7 +17,7 @@ public class BibiotecaAppTest {
     }
 
     @Test
-    public void testBookList(){
+    public void testGetBookList(){
         bibliotecaApp = new BibliotecaApp();
         //List<Book> actualBookList =  bibliotecaApp.getBookList();
         //List<Book> expectedBookList = new ArrayList<Book>(Arrays.asList(new Book("Harry Potter"), new Book("More and better"), new Book("The Alice's Life")));
@@ -26,12 +26,12 @@ public class BibiotecaAppTest {
     }
 
     @Test
-    public void testBookRemovedFromList(){
+    public void testCheckOutBook(){
         bibliotecaApp = new BibliotecaApp();
 
         Book book = new Book();
         book.setBookName("Harry Potter"); //it works if is equal or greater than second element
 
-        assertTrue(bibliotecaApp.removeCheckOutBook(book));
+        assertTrue(bibliotecaApp.checkOutBook(book));
     }
 }

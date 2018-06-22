@@ -58,7 +58,7 @@ public class BibliotecaApp {
         return bookList;
     }
 
-    public boolean removeCheckOutBook(Book book){
+    public boolean checkOutBook(Book book){
 
         List<Book> bookList = getBookList();
 
@@ -76,7 +76,14 @@ public class BibliotecaApp {
         String welcomeMessage = welcomeMessage();
         logMessage(welcomeMessage);
         mainMenu();
+        //successfulCheckout();
     }
+
+//    private void successfulCheckout() {
+//        String sussefulBookRemovedMessage = "Thank you! Enjoy the book";
+//        Book new
+//        logMessage(sussefulBookRemovedMessage);
+//    }
 
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
