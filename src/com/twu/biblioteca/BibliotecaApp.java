@@ -92,8 +92,13 @@ public class BibliotecaApp {
     }
 
     public String successfulCheckout() {
-        String sussefulBookRemoved = "Thank you! Enjoy the book";
+        String sussefulBookRemoved = "Thank you! Enjoy the book.";
         return sussefulBookRemoved;
+    }
+
+    public String unsucessulCheckout(){
+        String unsucessfulBookRemoved = "That book is not available.";
+        return unsucessfulBookRemoved;
     }
 
     public static void main(String[] args) {
