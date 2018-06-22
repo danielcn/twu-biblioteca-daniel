@@ -73,8 +73,7 @@ public class BibliotecaApp {
 
         return bookList;
     }
-
-
+    
     public boolean checkOutBook(Book book){
         List<Book> bookList = getBookList();
 
