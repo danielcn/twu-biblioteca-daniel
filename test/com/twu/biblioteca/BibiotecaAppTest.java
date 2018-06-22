@@ -2,6 +2,11 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -19,10 +24,9 @@ public class BibiotecaAppTest {
     @Test
     public void testGetBookList(){
         bibliotecaApp = new BibliotecaApp();
-        //List<Book> actualBookList =  bibliotecaApp.getBookList();
-        //List<Book> expectedBookList = new ArrayList<Book>(Arrays.asList(new Book("Harry Potter"), new Book("More and better"), new Book("The Alice's Life")));
-        //assertArrayEquals(expectedBookList.toArray(), actualBookList.toArray());
-        assertTrue(true);
+        List<Book> actualBookList =  bibliotecaApp.getBookList();
+        List<Book> expectedBookList = Arrays.asList(new Book("Harry Potter"), new Book("More and better"), new Book("The Alice's Life"));
+        assertArrayEquals(expectedBookList.toArray(), actualBookList.toArray());
     }
 
     @Test

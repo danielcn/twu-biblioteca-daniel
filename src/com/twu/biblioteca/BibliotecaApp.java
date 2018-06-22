@@ -79,11 +79,10 @@ public class BibliotecaApp {
         //successfulCheckout();
     }
 
-//    private void successfulCheckout() {
-//        String sussefulBookRemovedMessage = "Thank you! Enjoy the book";
-//        Book new
-//        logMessage(sussefulBookRemovedMessage);
-//    }
+    public String successfulCheckout() {
+        String sussefulBookRemoved = "Thank you! Enjoy the book";
+        return sussefulBookRemoved;
+    }
 
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
