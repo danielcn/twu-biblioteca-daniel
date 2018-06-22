@@ -10,23 +10,26 @@ import java.util.Objects;
 public class Book {
 
     private String bookName;
+    private String author;
+    private String yearPublished;
 
     public Book(){
 
     }
 
+    public String getAuthor() { return author; }
+
+    public void setAuthor(String author) { this.author = author; }
+
     public Book(String bookName){
         this.bookName = bookName;
     }
-
 
     public String getBookName() {
         return bookName;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
-    }
+    public void setBookName(String bookName) { this.bookName = bookName; }
 
     @Override
     public boolean equals(Object o) {
