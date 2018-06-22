@@ -1,19 +1,12 @@
 package com.twu.biblioteca;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-=======
 import java.sql.SQLOutput;
-import java.util.*;
 import java.util.concurrent.BlockingDeque;
->>>>>>> feature7
-=======
-import java.sql.SQLOutput;
-import java.util.*;
-import java.util.concurrent.BlockingDeque;
->>>>>>> feature7
+
 
 public class BibliotecaApp {
 
@@ -23,53 +16,7 @@ public class BibliotecaApp {
         this.bookList = new ArrayList<Book>();
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public void mainMenu(){
-        System.out.println("Command Options: ");
-        System.out.println("1: List Books");
-        System.out.println("0: Quit");
 
-        Scanner sc = new Scanner(System.in);
-        int choice = 0;
-        do {
-            choice = sc.nextInt();
-            switch (choice) {
-                case 1:
-                    this.getBookList();
-                    break;
-                default:
-                    break;
-            }
-        } while (choice != 0);
-=======
-    public void logMessage(String message){
-        System.out.println(message);
->>>>>>> feature7
-    }
-
-    public String welcomeMessage() {
-        String welcomeMessage = "Welcome Message";
-        return welcomeMessage;
-    }
-
-    public void bookDetails(List<Book> bookList){
-        String headList = "Name | Author | Year of Published";
-        logMessage(headList);
-        for (int i = 0; i < bookList.size(); i++) {
-            System.out.print(bookList.get(i).getBookName());
-            System.out.print("| " + bookList.get(i).getAuthor());
-            System.out.print("| " + bookList.get(i).getYearPublished());
-            System.out.println("\n");
-        }
-    }
-
-    public void mainMenu(){
-        logMessage("Command Options: ");
-        logMessage("1: List Books");
-        logMessage("0: Quit");
-
-=======
     public void logMessage(String message){
         System.out.println(message);
     }
@@ -95,7 +42,6 @@ public class BibliotecaApp {
         logMessage("1: List Books");
         logMessage("0: Quit");
 
->>>>>>> feature7
         Scanner sc = new Scanner(System.in);
         int choice = 0;
         do {
@@ -128,14 +74,7 @@ public class BibliotecaApp {
         return bookList;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public void startApp(){
-        System.out.println(welcomeMessage());
-        mainMenu();
-=======
-=======
->>>>>>> feature7
+
     public boolean checkOutBook(Book book){
         List<Book> bookList = getBookList();
 
@@ -183,10 +122,6 @@ public class BibliotecaApp {
 
     public String unsuccessfulBookReturn(){
         return "That is not a valid book to return.";
-<<<<<<< HEAD
->>>>>>> feature7
-=======
->>>>>>> feature7
     }
 
     public static void main(String[] args) {
