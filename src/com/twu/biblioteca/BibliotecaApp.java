@@ -16,7 +16,6 @@ public class BibliotecaApp {
         this.bookList = new ArrayList<Book>();
     }
 
-
     public void logMessage(String message){
         System.out.println(message);
     }
@@ -95,13 +94,11 @@ public class BibliotecaApp {
     }
 
     public String successfulCheckout() {
-        String sussefulBookRemoved = "Thank you! Enjoy the book.";
-        return sussefulBookRemoved;
+        return "Thank you! Enjoy the book.";
     }
 
     public String unsucessulCheckout(){
-        String unsucessfulBookRemoved = "That book is not available.";
-        return unsucessfulBookRemoved;
+        return "That book is not available.";
     }
 
     public Book returnBook(Book book) {
