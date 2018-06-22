@@ -1,12 +1,8 @@
 package com.twu.biblioteca;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.sql.SQLOutput;
-import java.util.concurrent.BlockingDeque;
-
 
 public class BibliotecaApp {
 
@@ -93,13 +89,9 @@ public class BibliotecaApp {
         //successfulCheckout();
     }
 
-    public String successfulCheckout() {
-        return "Thank you! Enjoy the book.";
-    }
+    public String successfulCheckout() { return "Thank you! Enjoy the book."; }
 
-    public String unsucessulCheckout(){
-        return "That book is not available.";
-    }
+    public String unsucessulCheckout(){ return "That book is not available."; }
 
     public Book returnBook(Book book) {
         List<Book> bookList = getBookList();
