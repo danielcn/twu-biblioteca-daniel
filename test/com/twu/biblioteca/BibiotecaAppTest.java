@@ -38,4 +38,14 @@ public class BibiotecaAppTest {
 
         assertTrue(bibliotecaApp.checkOutBook(book));
     }
+
+    @Test
+    public void testReturnBook(){
+        bibliotecaApp = new BibliotecaApp();
+
+        Book bookExpected = new Book("Harry Potter");
+        Book bookActual = bibliotecaApp.returnBook(bookExpected);
+
+        assertEquals(bookExpected, bookActual);
+    }
 }

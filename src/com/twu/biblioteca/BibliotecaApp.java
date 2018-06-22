@@ -55,7 +55,6 @@ public class BibliotecaApp {
     }
 
     public List<Book> getBookList() {
-
         Book book1 = new Book();
         book1.setBookName("Harry Potter");
         Book book2 = new Book();
@@ -71,12 +70,10 @@ public class BibliotecaApp {
     }
 
     public boolean checkOutBook(Book book){
-
         List<Book> bookList = getBookList();
 
         while (bookList.iterator().hasNext()) {
             Book currentBook = bookList.iterator().next();
-            System.out.println(currentBook);
             if(currentBook.equals(book)){
                 return bookList.remove(currentBook);
             }
@@ -104,5 +101,18 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         bibliotecaApp.startApp();
+    }
+
+    public Book returnBook(Book book) {
+        List<Book> bookList = getBookList();
+
+        while (bookList.iterator().hasNext()) {
+            Book currentBook = bookList.iterator().next();
+            if(currentBook.equals(book)){
+                System.out.println(currentBook);
+                return currentBook;
+            }
+        }
+        return null;
     }
 }
