@@ -98,21 +98,28 @@ public class BibliotecaApp {
         return unsucessfulBookRemoved;
     }
 
-    public static void main(String[] args) {
-        BibliotecaApp bibliotecaApp = new BibliotecaApp();
-        bibliotecaApp.startApp();
-    }
-
     public Book returnBook(Book book) {
         List<Book> bookList = getBookList();
 
         while (bookList.iterator().hasNext()) {
             Book currentBook = bookList.iterator().next();
             if(currentBook.equals(book)){
-                System.out.println(currentBook);
                 return currentBook;
             }
         }
         return null;
+    }
+
+    public String successfulBookReturn(){
+        return "Thank you for returning the book.";
+    }
+
+    public String unsuccessfulBookReturn(){
+        return "That is not a valid book to return.";
+    }
+
+    public static void main(String[] args) {
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        bibliotecaApp.startApp();
     }
 }

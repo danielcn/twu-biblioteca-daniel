@@ -48,4 +48,28 @@ public class BibiotecaAppTest {
 
         assertEquals(bookExpected, bookActual);
     }
+
+    @Test
+    public void testReturnBookSuccessful(){
+        bibliotecaApp = new BibliotecaApp();
+
+        Book bookExpected = new Book("Harry Potter");
+        Book bookActual = bibliotecaApp.returnBook(bookExpected);
+        if(bookActual != null) {
+            String sucessBookReturnMessage =  bibliotecaApp.successfulBookReturn();
+            assertEquals("Thank you for returning the book.", sucessBookReturnMessage);
+        }
+    }
+
+    @Test
+    public void testReturnBookUnsuccessful(){
+        bibliotecaApp = new BibliotecaApp();
+
+        Book bookExpected = new Book("Harry Potter");
+        Book bookActual = bibliotecaApp.returnBook(bookExpected);
+        if(bookActual != null) {
+            String unsucessBookReturnMessage =  bibliotecaApp.unsuccessfulBookReturn();
+            assertEquals("That is not a valid book to return.", unsucessBookReturnMessage);
+        }
+    }
 }
