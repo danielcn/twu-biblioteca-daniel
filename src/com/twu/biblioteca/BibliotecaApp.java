@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import java.sql.SQLOutput;
 import java.util.*;
 import java.util.concurrent.BlockingDeque;
 
@@ -18,6 +19,17 @@ public class BibliotecaApp {
     public String welcomeMessage() {
         String welcomeMessage = "Welcome Message";
         return welcomeMessage;
+    }
+
+    public void bookDetails(List<Book> bookList){
+        String headList = "Name | Author | Year of Published";
+        logMessage(headList);
+        for (int i = 0; i < bookList.size(); i++) {
+            System.out.print(bookList.get(i).getBookName());
+            System.out.print("| " + bookList.get(i).getAuthor());
+            System.out.print("| " + bookList.get(i).getYearPublished());
+            System.out.println("\n");
+        }
     }
 
     public void mainMenu(){

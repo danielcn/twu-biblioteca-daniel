@@ -11,15 +11,11 @@ public class Book {
 
     private String bookName;
     private String author;
+
     private String yearPublished;
 
     public Book(){
-
     }
-
-    public String getAuthor() { return author; }
-
-    public void setAuthor(String author) { this.author = author; }
 
     public Book(String bookName){
         this.bookName = bookName;
@@ -30,6 +26,14 @@ public class Book {
     }
 
     public void setBookName(String bookName) { this.bookName = bookName; }
+
+    public String getAuthor() { return author; }
+
+    public void setAuthor(String author) { this.author = author; }
+
+    public String getYearPublished() { return yearPublished; }
+
+    public void setYearPublished(String yearPublished) { this.yearPublished = yearPublished; }
 
     @Override
     public boolean equals(Object o) {
