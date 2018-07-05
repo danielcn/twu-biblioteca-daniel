@@ -1,4 +1,4 @@
-package com.twu.biblioteca.domain.domain;
+package com.twu.biblioteca.domain;
 
 import org.junit.Test;
 

@@ -1,21 +1,19 @@
 package com.twu.biblioteca.main;
 
 import com.twu.biblioteca.domain.Book;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
+import org.junit.*;
 
 import static org.junit.Assert.*;
 
 public class BibiotecaAppTest {
 
     private BibliotecaApp bibliotecaApp;
+    private Library library;
 
     @Before
     public void setUp(){
         bibliotecaApp = new BibliotecaApp();
+        library = new Library();
     }
 
     @Test
@@ -25,30 +23,16 @@ public class BibiotecaAppTest {
     }
 
     @Test
-    public void testGetBookList(){
-        List<Book> actualBookList =  bibliotecaApp.getBookList();
-        List<Book> expectedBookList = Arrays.asList(new Book("Harry Potter"), new Book("More and better"), new Book("The Alice's Life"));
-        assertArrayEquals(expectedBookList.toArray(), actualBookList.toArray());
-    }
-
-    @Test
-    public void testCheckOutBook(){
-        Book book = new Book();
-        book.setBookName("Harry Potter"); //it works if is equal or greater than second element
-        assertTrue(bibliotecaApp.checkOutBook(book));
-    }
-
-    @Test
     public void testReturnBook(){
         Book bookExpected = new Book("Harry Potter");
-        Book bookActual = bibliotecaApp.returnBook(bookExpected);
+        Book bookActual = library.returnBook(bookExpected);
         assertEquals(bookExpected, bookActual);
     }
 
     @Test
     public void testReturnBookSuccessful(){
         Book bookExpected = new Book("Harry Potter");
-        Book bookActual = bibliotecaApp.returnBook(bookExpected);
+        Book bookActual = library.returnBook(bookExpected);
         if(bookActual != null) {
             String sucessBookReturnMessage =  bibliotecaApp.successfulBookReturn();
             assertEquals("Thank you for returning the book.", sucessBookReturnMessage);
@@ -58,7 +42,7 @@ public class BibiotecaAppTest {
     @Test
     public void testReturnBookUnsuccessful(){
         Book bookExpected = new Book("Harry Potter");
-        Book bookActual = bibliotecaApp.returnBook(bookExpected);
+        Book bookActual = library.returnBook(bookExpected);
         if(bookActual != null) {
             String unsucessBookReturnMessage =  bibliotecaApp.unsuccessfulBookReturn();
             assertEquals("That is not a valid book to return.", unsucessBookReturnMessage);
