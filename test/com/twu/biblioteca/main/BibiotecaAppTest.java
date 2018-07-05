@@ -1,9 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.main;
 
+import com.twu.biblioteca.domain.Book;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
