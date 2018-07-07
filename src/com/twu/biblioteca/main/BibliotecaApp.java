@@ -52,7 +52,6 @@ public class BibliotecaApp {
         logMessage(welcomeMessage);
         library = new Library();
         mainMenu();
-        //successfulCheckout();
     }
 
     public static void main(String[] args) {
