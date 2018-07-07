@@ -50,6 +50,7 @@ public class BibliotecaApp {
     public void startApp(){
         String welcomeMessage = welcomeMessage();
         logMessage(welcomeMessage);
+        library = new Library();
         mainMenu();
         //successfulCheckout();
     }
