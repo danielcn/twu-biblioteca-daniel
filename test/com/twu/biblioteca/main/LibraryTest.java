@@ -1,10 +1,12 @@
 package com.twu.biblioteca.main;
 
 import com.twu.biblioteca.domain.Book;
+import com.twu.biblioteca.domain.Movie;
 import com.twu.biblioteca.main.Library;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,11 +28,26 @@ public class LibraryTest {
         assertArrayEquals(expectedBookList.toArray(), actualBookList.toArray());
     }
 
-
     @Test
     public void testCheckOutBook(){
         Book book = new Book();
         book.setBookName("Harry Potter"); //it works if is equal or greater than second element
         assertTrue(library.checkOutBook(book));
+    }
+
+    @Test
+    public void testGetMovieList(){
+        List<Movie> actualMovieList = library.getMovieList();
+
+        Movie movie1 = new Movie();
+        movie1.setName("Dejavour");
+        Movie movie2 = new Movie();
+        movie2.setName("Flight");
+        Movie movie3 = new Movie();
+        movie3.setName("Hitch");
+
+        List<Movie> expectedMovies = Arrays.asList(movie1, movie2, movie3);
+
+        assertArrayEquals(expectedMovies.toArray(), actualMovieList.toArray());
     }
 }
