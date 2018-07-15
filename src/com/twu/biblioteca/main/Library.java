@@ -1,16 +1,20 @@
 package com.twu.biblioteca.main;
 
 import com.twu.biblioteca.domain.Book;
+import com.twu.biblioteca.domain.Movie;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Library {
 
     private ArrayList<Book> bookList;
+    private ArrayList<Movie> movies;
 
     Library(){
         this.bookList = new ArrayList<Book>();
+        this.movies = new ArrayList<Movie>();
     }
 
     public List<Book> getBookList() {
@@ -61,5 +65,21 @@ public class Library {
             }
         }
         return null;
+    }
+
+    public List<Movie> getMovieList() {
+        Movie movie1 = new Movie();
+        movie1.setName("Dejavour");
+        Movie movie2 = new Movie();
+        movie2.setName("Flight");
+        Movie movie3 = new Movie();
+        movie3.setName("Hitch");
+
+        movies.add(movie1);
+        movies.add(movie2);
+        movies.add(movie3);
+        //movies.addAll(Arrays.asList(movie1, movie2, movie3));
+
+        return movies;
     }
 }
