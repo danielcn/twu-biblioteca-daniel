@@ -82,4 +82,14 @@ public class Library {
 
         return movies;
     }
+
+    public boolean checkOutMovie(Movie movie) {
+        List<Movie> movieList = this.getMovieList();
+        while(movieList.iterator().hasNext()){
+            Movie currentMovie = movieList.iterator().next();
+            if(currentMovie.equals(movie))
+                return movieList.remove(movie);
+        }
+        return false;
+    }
 }
