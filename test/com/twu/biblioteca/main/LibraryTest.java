@@ -50,4 +50,11 @@ public class LibraryTest {
 
         assertArrayEquals(expectedMovies.toArray(), actualMovieList.toArray());
     }
+
+    @Test
+    public void testCheckouMovie(){
+        Movie movie = new Movie();
+        movie.setName("Dejavour");
+        assertTrue(library.checkOutMovie(movie));
+    }
 }
