@@ -65,13 +65,12 @@ public class Library {
     public Book returnBook(Book book) {
         List<Book> bookList = this.getBookList();
 
-        while (bookList.iterator().hasNext()) {
-            Book currentBook = bookList.iterator().next();
-            if(currentBook.equals(book)){
-                return currentBook;
-            }
-        }
-        return null;
+        Book currentBook = bookList.stream()
+                .filter(b -> b.equals(book))
+                .findFirst()
+                .get();
+
+        return currentBook;
     }
 
     public List<Movie> getMovieList() {
