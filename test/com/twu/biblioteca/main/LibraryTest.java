@@ -3,11 +3,9 @@ package com.twu.biblioteca.main;
 import com.twu.biblioteca.domain.Book;
 import com.twu.biblioteca.domain.Movie;
 import com.twu.biblioteca.domain.User;
-import com.twu.biblioteca.main.Library;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -64,4 +62,19 @@ public class LibraryTest {
         User user = new User("xxx-xxxx", 123456);
         assertTrue(library.userIsLogged(user));
     }
+
+    @Test
+    public void testGetUserInformation(){
+        User expectedUser = new User("xxx-xxx", 123456);
+        expectedUser.setName("Daniel");
+        expectedUser.setEmail("dnasciment@tw.com");
+        expectedUser.setAddress("Operários Street, n 03");
+        expectedUser.setPhoneNumber("99888-7766");
+        User actualUser = library.getUserInformation();
+        assertSame(expectedUser.getName(), actualUser.getName());
+        assertSame(expectedUser.getEmail(), actualUser.getEmail());
+        assertSame(expectedUser.getAddress(), actualUser.getAddress());
+        assertSame(expectedUser.getPhoneNumber(), actualUser.getPhoneNumber());
+    }
+
 }
