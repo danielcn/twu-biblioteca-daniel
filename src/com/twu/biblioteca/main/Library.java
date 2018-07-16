@@ -96,9 +96,12 @@ public class Library {
     }
 
     public boolean userIsLogged(User user) {
-        if(user.equals(this.user))
-            return true;
-        return false;
+        boolean userIsLogged = false;
+        if(user.equals(this.user)){
+            userIsLogged = true;
+            return userIsLogged;
+        }
+        return userIsLogged;
     }
 
     public User getUserInformation() {
