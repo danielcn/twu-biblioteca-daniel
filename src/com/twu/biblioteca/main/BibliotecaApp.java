@@ -6,6 +6,10 @@ public class BibliotecaApp {
 
     private Library library;
 
+    BibliotecaApp(){
+        this.library = new Library();
+    }
+
     public void logMessage(String message){
         System.out.println(message);
     }
