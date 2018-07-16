@@ -86,7 +86,6 @@ public class Library {
         movies.add(movie1);
         movies.add(movie2);
         movies.add(movie3);
-        //movies.addAll(Arrays.asList(movie1, movie2, movie3));
 
         return movies;
     }
