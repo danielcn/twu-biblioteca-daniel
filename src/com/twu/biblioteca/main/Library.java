@@ -2,6 +2,7 @@ package com.twu.biblioteca.main;
 
 import com.twu.biblioteca.domain.Book;
 import com.twu.biblioteca.domain.Movie;
+import com.twu.biblioteca.domain.User;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,10 +12,12 @@ public class Library {
 
     private ArrayList<Book> bookList;
     private ArrayList<Movie> movies;
+    private User user;
 
     Library(){
         this.bookList = new ArrayList<Book>();
         this.movies = new ArrayList<Movie>();
+        this.user = new User("xxx-xxxx", 123456);
     }
 
     public List<Book> getBookList() {
@@ -90,6 +93,12 @@ public class Library {
             if(currentMovie.equals(movie))
                 return movieList.remove(movie);
         }
+        return false;
+    }
+
+    public boolean userIsLogged(User user) {
+        if(user.equals(this.user))
+            return true;
         return false;
     }
 }
