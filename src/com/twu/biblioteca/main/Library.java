@@ -16,11 +16,13 @@ public class Library {
     Library(){
         this.bookList = new ArrayList<Book>();
         this.movies = new ArrayList<Movie>();
-        this.user = new User("xxx-xxxx", 123456);
-        user.name = "Daniel";
-        user.email = "dnasciment@tw.com";
-        user.address = "Operários Street, n 03";
-        user.phoneNumber = "99888-7766";
+        this.user = new User("Daniel",
+                "dnasciment@tw.com",
+                "Operários Street, n 03",
+                "99888-7766",
+                "xxx-xxxx",
+                123456
+        );
     }
 
     public List<Book> getBookList() {
