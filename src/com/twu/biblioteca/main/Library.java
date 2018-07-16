@@ -63,8 +63,8 @@ public class Library {
         Book currentBook = getBook(book, bookList);
         return bookList.remove(currentBook);
     }
-    
-    public Book returnBook(Book book) {
+
+    public Book findBook(Book book) {
         List<Book> bookList = this.getBookList();
         Book currentBook = getBook(book,bookList);
         return currentBook;

@@ -25,14 +25,14 @@ public class BibiotecaAppTest {
     @Test
     public void testReturnBook(){
         Book bookExpected = new Book("Harry Potter");
-        Book bookActual = library.returnBook(bookExpected);
+        Book bookActual = library.findBook(bookExpected);
         assertEquals(bookExpected, bookActual);
     }
 
     @Test
     public void testReturnBookSuccessful(){
         Book bookExpected = new Book("Harry Potter");
-        Book bookActual = library.returnBook(bookExpected);
+        Book bookActual = library.findBook(bookExpected);
         if(bookActual != null) {
             String sucessBookReturnMessage =  bibliotecaApp.successfulBookReturn();
             assertEquals("Thank you for returning the book.", sucessBookReturnMessage);
@@ -42,7 +42,7 @@ public class BibiotecaAppTest {
     @Test
     public void testReturnBookUnsuccessful(){
         Book bookExpected = new Book("Harry Potter");
-        Book bookActual = library.returnBook(bookExpected);
+        Book bookActual = library.findBook(bookExpected);
         if(bookActual != null) {
             String unsucessBookReturnMessage =  bibliotecaApp.unsuccessfulBookReturn();
             assertEquals("That is not a valid book to return.", unsucessBookReturnMessage);
