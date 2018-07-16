@@ -54,13 +54,12 @@ public class Library {
     public boolean checkOutBook(Book book){
         List<Book> bookList = this.getBookList();
 
-        while (bookList.iterator().hasNext()) {
-            Book currentBook = bookList.iterator().next();
-            if(currentBook.equals(book)){
-                return bookList.remove(currentBook);
-            }
-        }
-        return false;
+        Book currentBook = bookList.stream()
+                .filter(b -> b.equals(book))
+                .findFirst()
+                .get();
+
+        return bookList.remove(currentBook);
     }
 
     public Book returnBook(Book book) {
