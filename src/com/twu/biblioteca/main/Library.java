@@ -87,12 +87,15 @@ public class Library {
 
     public boolean checkOutMovie(Movie movie) {
         List<Movie> movieList = this.getMovieList();
-        while(movieList.iterator().hasNext()){
-            Movie currentMovie = movieList.iterator().next();
-            if(currentMovie.equals(movie))
-                return movieList.remove(movie);
-        }
-        return false;
+        Movie movieCurrent = getMovie(movie, movieList);
+        return movieList.remove(movieCurrent);
+    }
+
+    private Movie getMovie(Movie movie, List<Movie> movieList) {
+        return movieList.stream()
+                .filter(m -> m.equals(movie))
+                .findFirst()
+                .get();
     }
 
     public boolean userIsLogged(User user) {
