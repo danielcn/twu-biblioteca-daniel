@@ -51,25 +51,22 @@ public class Library {
         }
     }
 
-    public boolean checkOutBook(Book book){
-        List<Book> bookList = this.getBookList();
-
-        Book currentBook = bookList.stream()
+    private Book getBook(Book book, List<Book> bookList) {
+        return bookList.stream()
                 .filter(b -> b.equals(book))
                 .findFirst()
                 .get();
-
-        return bookList.remove(currentBook);
     }
 
+    public boolean checkOutBook(Book book){
+        List<Book> bookList = this.getBookList();
+        Book currentBook = getBook(book, bookList);
+        return bookList.remove(currentBook);
+    }
+    
     public Book returnBook(Book book) {
         List<Book> bookList = this.getBookList();
-
-        Book currentBook = bookList.stream()
-                .filter(b -> b.equals(book))
-                .findFirst()
-                .get();
-
+        Book currentBook = getBook(book,bookList);
         return currentBook;
     }
 
