@@ -9,13 +9,13 @@ import java.util.List;
 
 public class Library {
 
-    private ArrayList<Book> bookList;
-    private ArrayList<Movie> movies;
+    private List<Book> bookList;
+    private List<Movie> movieList;
     private User user;
 
     Library(){
         this.bookList = new ArrayList<Book>();
-        this.movies = new ArrayList<Movie>();
+        this.movieList = new ArrayList<Movie>();
         this.user = new User("Daniel",
                 "dnasciment@tw.com",
                 "Operários Street, n 03",
@@ -78,11 +78,11 @@ public class Library {
         Movie movie3 = new Movie();
         movie3.setName("Hitch");
 
-        movies.add(movie1);
-        movies.add(movie2);
-        movies.add(movie3);
+        movieList.add(movie1);
+        movieList.add(movie2);
+        movieList.add(movie3);
 
-        return movies;
+        return movieList;
     }
 
     public boolean checkOutMovie(Movie movie) {
