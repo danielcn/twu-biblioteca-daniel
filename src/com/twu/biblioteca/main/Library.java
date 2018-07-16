@@ -5,7 +5,6 @@ import com.twu.biblioteca.domain.Movie;
 import com.twu.biblioteca.domain.User;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Library {
@@ -18,6 +17,10 @@ public class Library {
         this.bookList = new ArrayList<Book>();
         this.movies = new ArrayList<Movie>();
         this.user = new User("xxx-xxxx", 123456);
+        user.name = "Daniel";
+        user.email = "dnasciment@tw.com";
+        user.address = "Operários Street, n 03";
+        user.phoneNumber = "99888-7766";
     }
 
     public List<Book> getBookList() {
@@ -100,5 +103,9 @@ public class Library {
         if(user.equals(this.user))
             return true;
         return false;
+    }
+
+    public User getUserInformation() {
+        return this.user;
     }
 }
