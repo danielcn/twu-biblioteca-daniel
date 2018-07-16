@@ -2,6 +2,7 @@ package com.twu.biblioteca.main;
 
 import com.twu.biblioteca.domain.Book;
 import com.twu.biblioteca.domain.Movie;
+import com.twu.biblioteca.domain.User;
 import com.twu.biblioteca.main.Library;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,5 +57,11 @@ public class LibraryTest {
         Movie movie = new Movie();
         movie.setName("Dejavour");
         assertTrue(library.checkOutMovie(movie));
+    }
+
+    @Test
+    public void testUserIsLogged(){
+        User user = new User("xxx-xxxx", 123456);
+        assertTrue(library.userIsLogged(user));
     }
 }
