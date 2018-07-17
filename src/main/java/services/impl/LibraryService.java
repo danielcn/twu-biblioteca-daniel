@@ -15,15 +15,11 @@ public class LibraryService implements LibraryServiceInterface<Library> {
 
     private BookRepository bookRepository;
     private MovieRepository movieRepository;
-    private List<Book> bookList;
-    private List<Movie> movieList;
     private User user;
 
     public LibraryService(){
         this.bookRepository = new BookRepository();
         this.movieRepository = new MovieRepository();
-        this.bookList = new ArrayList<Book>();
-        this.movieList = new ArrayList<Movie>();
         this.user = new User("Daniel",
                 "dnasciment@tw.com",
                 "Operários Street, n 03",
@@ -67,7 +63,7 @@ public class LibraryService implements LibraryServiceInterface<Library> {
     public boolean checkOutBook(Book book){
         List<Book> bookList = this.getBookList();
         Book currentBook = getBook(book, bookList);
-        return bookList.remove(currentBook);
+        return bookRepository.remove(currentBook);
     }
 
     @Override
@@ -75,6 +71,11 @@ public class LibraryService implements LibraryServiceInterface<Library> {
         List<Book> bookList = this.getBookList();
         Book currentBook = getBook(book,bookList);
         return currentBook;
+    }
+
+    @Override
+    public void addMovie(Movie movie){
+        movieRepository.add(movie);
     }
 
     @Override
@@ -86,7 +87,7 @@ public class LibraryService implements LibraryServiceInterface<Library> {
     public boolean checkOutMovie(Movie movie) {
         List<Movie> movieList = this.getMovieList();
         Movie movieCurrent = getMovie(movie, movieList);
-        return movieList.remove(movieCurrent);
+        return movieRepository.remove(movieCurrent);
     }
 
     @Override

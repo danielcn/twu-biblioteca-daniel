@@ -19,6 +19,8 @@ public interface LibraryServiceInterface<T> {
 
     Book findBook(Book book);
 
+    void addMovie(Movie movie);
+
     List<Movie> getMovieList();
 
     boolean checkOutMovie(Movie movie);

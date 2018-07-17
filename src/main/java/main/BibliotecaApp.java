@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
 
-    private LibraryService library;
+    private LibraryService libraryService;
 
     BibliotecaApp(){
-        this.library = new LibraryService();
+        this.libraryService = new LibraryService();
     }
 
     public void logMessage(String message){
@@ -32,7 +32,7 @@ public class BibliotecaApp {
             switch (choice) {
                 case 1:
                     System.out.println("Test");
-                    //library.bookDetails(library.getBookList());
+                    libraryService.bookDetails(libraryService.getBookList());
                     break;
                 case 0:
                     break;
@@ -58,7 +58,7 @@ public class BibliotecaApp {
     public void startApp(){
         String welcomeMessage = welcomeMessage();
         logMessage(welcomeMessage);
-        library = new LibraryService();
+        libraryService = new LibraryService();
         mainMenu();
     }
 

@@ -30,4 +30,9 @@ public class MovieRepository implements Repository<Movie> {
 
         return movieList;
     }
+
+    @Override
+    public boolean remove(Movie movie){
+        return movieList.remove(movie);
+    }
 }

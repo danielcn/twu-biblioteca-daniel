@@ -29,4 +29,9 @@ public class BookRepository implements Repository<Book> {
 
         return bookList;
     }
+
+    @Override
+    public boolean remove(Book book) {
+        return bookList.remove(book);
+    }
 }

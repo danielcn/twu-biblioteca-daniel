@@ -16,16 +16,16 @@ import static org.junit.Assert.assertTrue;
 
 public class LibraryServiceTest {
 
-    private LibraryService library;
+    private LibraryService libraryService;
 
     @Before
     public void setUp(){
-        library = new LibraryService();
+        libraryService = new LibraryService();
     }
 
     @Test
     public void testGetBookList(){
-        List<Book> actualBookList =  library.getBookList();
+        List<Book> actualBookList =  libraryService.getBookList();
         List<Book> expectedBookList = Arrays.asList(new Book("Harry Potter"), new Book("More and better"), new Book("The Alice's Life"));
         assertArrayEquals(expectedBookList.toArray(), actualBookList.toArray());
     }
@@ -34,12 +34,12 @@ public class LibraryServiceTest {
     public void testCheckOutBook(){
         Book book = new Book();
         book.setBookName("Harry Potter"); //it works if is equal or greater than second element
-        assertTrue(library.checkOutBook(book));
+        assertTrue(libraryService.checkOutBook(book));
     }
 
     @Test
     public void testGetMovieList(){
-        List<Movie> actualMovieList = library.getMovieList();
+        List<Movie> actualMovieList = libraryService.getMovieList();
 
         Movie movie1 = new Movie();
         movie1.setName("Dejavour");
@@ -57,13 +57,13 @@ public class LibraryServiceTest {
     public void testCheckouMovie(){
         Movie movie = new Movie();
         movie.setName("Dejavour");
-        assertTrue(library.checkOutMovie(movie));
+        assertTrue(libraryService.checkOutMovie(movie));
     }
 
     @Test
     public void testUserIsLogged(){
         User user = new User("xxx-xxxx", 123456);
-        assertTrue(library.userIsLogged(user));
+        assertTrue(libraryService.userIsLogged(user));
     }
 
     @Test
@@ -73,11 +73,10 @@ public class LibraryServiceTest {
         expectedUser.setEmail("dnasciment@tw.com");
         expectedUser.setAddress("Operários Street, n 03");
         expectedUser.setPhoneNumber("99888-7766");
-        User actualUser = library.getUserInformation();
+        User actualUser = libraryService.getUserInformation();
         assertSame(expectedUser.getName(), actualUser.getName());
         assertSame(expectedUser.getEmail(), actualUser.getEmail());
         assertSame(expectedUser.getAddress(), actualUser.getAddress());
         assertSame(expectedUser.getPhoneNumber(), actualUser.getPhoneNumber());
     }
-
 }
