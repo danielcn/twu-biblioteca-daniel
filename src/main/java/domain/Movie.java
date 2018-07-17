@@ -1,7 +1,8 @@
+package domain;
+
 import java.util.Objects;
 
 public class Movie {
-
     private String name;
     private String year;
     private String directior;

@@ -1,7 +1,8 @@
+package domain;
+
 import java.util.Objects;
 
 public class User {
-
     public String name;
     public String email;
     public String address;

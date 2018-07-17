@@ -1,4 +1,5 @@
-package biblioteca.main;
+package main;
+
 
 import java.util.Scanner;
 
