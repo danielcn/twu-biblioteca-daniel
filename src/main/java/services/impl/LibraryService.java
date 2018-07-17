@@ -4,6 +4,7 @@ import domain.Book;
 import domain.Library;
 import domain.Movie;
 import domain.User;
+import repositories.impl.BookRepository;
 import services.LibraryServiceInterface;
 
 import java.util.ArrayList;
@@ -11,11 +12,14 @@ import java.util.List;
 
 public class LibraryService implements LibraryServiceInterface<Library> {
 
-    private List<Movie> movieList;
+    private BookRepository bookRepository;
     private List<Book> bookList;
+    private List<Movie> movieList;
     private User user;
 
     public LibraryService(){
+        this.bookRepository = new BookRepository();
+
         this.bookList = new ArrayList<Book>();
         this.movieList = new ArrayList<Movie>();
         this.user = new User("Daniel",
@@ -28,19 +32,13 @@ public class LibraryService implements LibraryServiceInterface<Library> {
     }
 
     @Override
+    public void addBook(Book book) {
+        bookRepository.add(book);
+    }
+
+    @Override
     public List<Book> getBookList() {
-        Book book1 = new Book();
-        book1.setBookName("Harry Potter");
-        Book book2 = new Book();
-        book2.setBookName("More and better");
-        Book book3 = new Book();
-        book3.setBookName("The Alice's Life");
-
-        bookList.add(book1);
-        bookList.add(book2);
-        bookList.add(book3);
-
-        return bookList;
+        return bookRepository.getBookList();
     }
 
     @Override
