@@ -1,4 +1,4 @@
-package main;
+package services.impl;
 
 import domain.Book;
 import domain.Movie;
@@ -14,13 +14,13 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 
-public class LibraryTest {
+public class LibraryServiceTest {
 
-    private Library library;
+    private LibraryService library;
 
     @Before
     public void setUp(){
-        library = new Library();
+        library = new LibraryService();
     }
 
     @Test

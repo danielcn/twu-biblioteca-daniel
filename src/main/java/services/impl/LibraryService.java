@@ -1,4 +1,4 @@
-package main;
+package services.impl;
 
 import domain.Book;
 import domain.Movie;
@@ -7,13 +7,13 @@ import domain.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Library {
+public class LibraryService {
 
     private List<Movie> movieList;
     private List<Book> bookList;
     private User user;
 
-    Library(){
+    public LibraryService(){
         this.bookList = new ArrayList<Book>();
         this.movieList = new ArrayList<Movie>();
         this.user = new User("Daniel",

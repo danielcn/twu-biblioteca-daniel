@@ -1,14 +1,16 @@
 package main;
 
 
+import services.impl.LibraryService;
+
 import java.util.Scanner;
 
 public class BibliotecaApp {
 
-    private Library library;
+    private LibraryService library;
 
     BibliotecaApp(){
-        this.library = new Library();
+        this.library = new LibraryService();
     }
 
     public void logMessage(String message){
@@ -56,7 +58,7 @@ public class BibliotecaApp {
     public void startApp(){
         String welcomeMessage = welcomeMessage();
         logMessage(welcomeMessage);
-        library = new Library();
+        library = new LibraryService();
         mainMenu();
     }
 

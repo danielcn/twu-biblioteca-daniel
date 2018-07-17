@@ -2,18 +2,19 @@ package main;
 
 import domain.Book;
 import org.junit.*;
+import services.impl.LibraryService;
 
 import static org.junit.Assert.assertEquals;
 
 public class BibiotecaAppTest {
 
     private BibliotecaApp bibliotecaApp;
-    private Library library;
+    private LibraryService library;
 
     @Before
     public void setUp(){
         bibliotecaApp = new BibliotecaApp();
-        library = new Library();
+        library = new LibraryService();
     }
 
     @Test
