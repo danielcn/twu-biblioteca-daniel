@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface LibraryServiceInterface<T> {
 
+    void addBook(Book book);
+
     List<Book> getBookList();
 
     void bookDetails(List<Book> bookList);
