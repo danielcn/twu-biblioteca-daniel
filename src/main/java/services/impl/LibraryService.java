@@ -5,6 +5,7 @@ import domain.Library;
 import domain.Movie;
 import domain.User;
 import repositories.impl.BookRepository;
+import repositories.impl.MovieRepository;
 import services.LibraryServiceInterface;
 
 import java.util.ArrayList;
@@ -13,13 +14,14 @@ import java.util.List;
 public class LibraryService implements LibraryServiceInterface<Library> {
 
     private BookRepository bookRepository;
+    private MovieRepository movieRepository;
     private List<Book> bookList;
     private List<Movie> movieList;
     private User user;
 
     public LibraryService(){
         this.bookRepository = new BookRepository();
-
+        this.movieRepository = new MovieRepository();
         this.bookList = new ArrayList<Book>();
         this.movieList = new ArrayList<Movie>();
         this.user = new User("Daniel",
@@ -38,7 +40,7 @@ public class LibraryService implements LibraryServiceInterface<Library> {
 
     @Override
     public List<Book> getBookList() {
-        return bookRepository.getBookList();
+        return bookRepository.getItemList();
     }
 
     @Override
@@ -77,18 +79,7 @@ public class LibraryService implements LibraryServiceInterface<Library> {
 
     @Override
     public List<Movie> getMovieList() {
-        Movie movie1 = new Movie();
-        movie1.setName("Dejavour");
-        Movie movie2 = new Movie();
-        movie2.setName("Flight");
-        Movie movie3 = new Movie();
-        movie3.setName("Hitch");
-
-        movieList.add(movie1);
-        movieList.add(movie2);
-        movieList.add(movie3);
-
-        return movieList;
+        return movieRepository.getItemList();
     }
 
     @Override

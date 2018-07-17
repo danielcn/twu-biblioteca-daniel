@@ -14,7 +14,8 @@ public class BookRepository implements Repository<Book> {
         bookList.add(book);
     }
 
-    public List<Book> getBookList() {
+    @Override
+    public List<Book> getItemList() {
         Book book1 = new Book();
         book1.setBookName("Harry Potter");
         Book book2 = new Book();
@@ -23,7 +24,7 @@ public class BookRepository implements Repository<Book> {
         book3.setBookName("The Alice's Life");
 
         bookList.add(book1);
-        bookList.add(book2);    
+        bookList.add(book2);
         bookList.add(book3);
 
         return bookList;

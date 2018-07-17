@@ -14,4 +14,20 @@ public class MovieRepository implements Repository<Movie> {
     public void add(Movie movie) {
         movieList.add(movie);
     }
+
+    @Override
+    public List<Movie> getItemList() {
+        Movie movie1 = new Movie();
+        movie1.setName("Dejavour");
+        Movie movie2 = new Movie();
+        movie2.setName("Flight");
+        Movie movie3 = new Movie();
+        movie3.setName("Hitch");
+
+        movieList.add(movie1);
+        movieList.add(movie2);
+        movieList.add(movie3);
+
+        return movieList;
+    }
 }
