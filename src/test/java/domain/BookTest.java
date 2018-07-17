@@ -1,4 +1,4 @@
-package domain2;
+package domain;
 
 import static org.junit.Assert.assertArrayEquals;
 
