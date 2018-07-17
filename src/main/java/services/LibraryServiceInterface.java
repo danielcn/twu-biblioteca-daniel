@@ -1,0 +1,25 @@
+package services;
+
+import domain.Book;
+import domain.Movie;
+
+import java.util.List;
+
+public interface LibraryServiceInterface<T> {
+
+    List<Book> getBookList();
+
+    void bookDetails(List<Book> bookList);
+
+    Book getBook(Book book, List<Book> bookList);
+
+    boolean checkOutBook(Book book);
+
+    Book findBook(Book book);
+
+    List<Movie> getMovieList();
+
+    boolean checkOutMovie(Movie movie);
+
+    Movie getMovie(Movie movie, List<Movie> movieList);
+}

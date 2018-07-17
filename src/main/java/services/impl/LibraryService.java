@@ -1,13 +1,15 @@
 package services.impl;
 
 import domain.Book;
+import domain.Library;
 import domain.Movie;
 import domain.User;
+import services.LibraryServiceInterface;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LibraryService {
+public class LibraryService implements LibraryServiceInterface<Library> {
 
     private List<Movie> movieList;
     private List<Book> bookList;
@@ -25,6 +27,7 @@ public class LibraryService {
         );
     }
 
+    @Override
     public List<Book> getBookList() {
         Book book1 = new Book();
         book1.setBookName("Harry Potter");
@@ -40,6 +43,7 @@ public class LibraryService {
         return bookList;
     }
 
+    @Override
     public void bookDetails(List<Book> bookList){
         String headList = "Name | Author | Year of Published";
         //logMessage(headList);
@@ -51,25 +55,29 @@ public class LibraryService {
         }
     }
 
-    private Book getBook(Book book, List<Book> bookList) {
+    @Override
+    public Book getBook(Book book, List<Book> bookList) {
         return bookList.stream()
                 .filter(b -> b.equals(book))
                 .findFirst()
                 .get();
     }
 
+    @Override
     public boolean checkOutBook(Book book){
         List<Book> bookList = this.getBookList();
         Book currentBook = getBook(book, bookList);
         return bookList.remove(currentBook);
     }
 
+    @Override
     public Book findBook(Book book) {
         List<Book> bookList = this.getBookList();
         Book currentBook = getBook(book,bookList);
         return currentBook;
     }
 
+    @Override
     public List<Movie> getMovieList() {
         Movie movie1 = new Movie();
         movie1.setName("Dejavour");
@@ -85,13 +93,15 @@ public class LibraryService {
         return movieList;
     }
 
+    @Override
     public boolean checkOutMovie(Movie movie) {
         List<Movie> movieList = this.getMovieList();
         Movie movieCurrent = getMovie(movie, movieList);
         return movieList.remove(movieCurrent);
     }
 
-    private Movie getMovie(Movie movie, List<Movie> movieList) {
+    @Override
+    public Movie getMovie(Movie movie, List<Movie> movieList) {
         return movieList.stream()
                 .filter(m -> m.equals(movie))
                 .findFirst()
