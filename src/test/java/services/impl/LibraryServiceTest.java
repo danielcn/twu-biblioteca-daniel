@@ -52,17 +52,20 @@ public class LibraryServiceTest {
     @Test
     public void testUserIsLogged(){
         User user = new User("xxx-xxxx", 123456);
-        assertTrue(libraryService.userIsLogged(user));
+        assertTrue(libraryService.userIsLogged(user.getLibraryNumber()));
     }
 
     @Test
     public void testGetUserInformation(){
+
         User expectedUser = new User("xxx-xxx", 123456);
         expectedUser.setName("Daniel");
         expectedUser.setEmail("dnasciment@tw.com");
         expectedUser.setAddress("Operários Street, n 03");
         expectedUser.setPhoneNumber("99888-7766");
-        User actualUser = libraryService.getUserInformation();
+
+        String libraryNumber = "xxx-xxxx";
+        User actualUser = libraryService.getUserInformation(libraryNumber);
         assertSame(expectedUser.getName(), actualUser.getName());
         assertSame(expectedUser.getEmail(), actualUser.getEmail());
         assertSame(expectedUser.getAddress(), actualUser.getAddress());

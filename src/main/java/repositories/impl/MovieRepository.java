@@ -1,6 +1,7 @@
 package repositories.impl;
 
 import domain.Movie;
+import domain.User;
 import repositories.Repository;
 
 import java.util.ArrayList;
@@ -34,5 +35,10 @@ public class MovieRepository implements Repository<Movie> {
     @Override
     public boolean remove(Movie movie){
         return movieList.remove(movie);
+    }
+
+    @Override
+    public User findById(String libraryNumber) {
+        throw new UnsupportedOperationException("THis method is not supported yet.");
     }
 }

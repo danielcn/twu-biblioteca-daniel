@@ -6,27 +6,22 @@ import domain.Movie;
 import domain.User;
 import repositories.impl.BookRepository;
 import repositories.impl.MovieRepository;
+import repositories.impl.UserRepository;
 import services.LibraryServiceInterface;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryService implements LibraryServiceInterface<Library> {
 
     private BookRepository bookRepository;
     private MovieRepository movieRepository;
+    private UserRepository userRepository;
     private User user;
 
     public LibraryService(){
         this.bookRepository = new BookRepository();
         this.movieRepository = new MovieRepository();
-        this.user = new User("Daniel",
-                "dnasciment@tw.com",
-                "Operários Street, n 03",
-                "99888-7766",
-                "xxx-xxxx",
-                123456
-        );
+        this.userRepository = new UserRepository();
     }
 
     @Override
@@ -98,16 +93,20 @@ public class LibraryService implements LibraryServiceInterface<Library> {
                 .get();
     }
 
-    public boolean userIsLogged(User user) {
+    public boolean userIsLogged(String libraryNumber) {
+        User userCurrent = userRepository.findById(libraryNumber);
+
         boolean userIsLogged = false;
-        if(user.equals(this.user)){
+        if(userCurrent != null){
             userIsLogged = true;
             return userIsLogged;
         }
         return userIsLogged;
     }
 
-    public User getUserInformation() {
-        return this.user;
+    public User getUserInformation(String libraryNumber) {
+        //remove attributes password and library to user or call specific informations from user
+        User user =  userRepository.findById(libraryNumber);
+        return user;
     }
 }

@@ -1,6 +1,7 @@
 package repositories.impl;
 
 import domain.Book;
+import domain.User;
 import repositories.Repository;
 
 import java.util.ArrayList;
@@ -33,5 +34,10 @@ public class BookRepository implements Repository<Book> {
     @Override
     public boolean remove(Book book) {
         return bookList.remove(book);
+    }
+
+    @Override
+    public User findById(String libraryNumber) {
+        throw new UnsupportedOperationException("THis method is not supported yet.");
     }
 }
