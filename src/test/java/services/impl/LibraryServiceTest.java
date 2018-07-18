@@ -9,9 +9,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class LibraryServiceTest {
@@ -33,24 +31,15 @@ public class LibraryServiceTest {
     @Test
     public void testCheckOutBook(){
         Book book = new Book();
-        book.setBookName("Harry Potter"); //it works if is equal or greater than second element
+        book.setBookName("Harry Potter");
         assertTrue(libraryService.checkOutBook(book));
     }
 
     @Test
     public void testGetMovieList(){
+        List<Movie> expectedMovieList = Arrays.asList(new Movie("Dejavour"), new Movie("Flight"), new Movie("Hitch"));
         List<Movie> actualMovieList = libraryService.getMovieList();
-
-        Movie movie1 = new Movie();
-        movie1.setName("Dejavour");
-        Movie movie2 = new Movie();
-        movie2.setName("Flight");
-        Movie movie3 = new Movie();
-        movie3.setName("Hitch");
-
-        List<Movie> expectedMovies = Arrays.asList(movie1, movie2, movie3);
-
-        assertArrayEquals(expectedMovies.toArray(), actualMovieList.toArray());
+        assertArrayEquals(expectedMovieList.toArray(), actualMovieList.toArray());
     }
 
     @Test

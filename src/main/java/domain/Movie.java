@@ -8,6 +8,14 @@ public class Movie {
     private String directior;
     private int rating;
 
+    public Movie(){
+
+    }
+
+    public Movie(String name){
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
